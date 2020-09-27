@@ -5,7 +5,7 @@ $this->title = 'My Yii Application';
 ?>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
-<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
 
 <button type="button" id="marker" class="btn btn-primary">Show charging stations</button>
