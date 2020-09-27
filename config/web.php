@@ -19,6 +19,10 @@ $config = [
         'request' => [
             'cookieValidationKey' => 'saejgmfowqmflmsdoujvno23j48jrejfgmqadmiopS**Tjgowgjmvoijfoiqoirfvz',
             'baseUrl' => '',
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ]
+
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -49,6 +53,15 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => ['api/charging-stations'],
+                    'pluralize' => 'false',
+                    'extraPatterns' => [
+                        'GET city/<name>' => 'city',
+                    ],
+
+                ]
             ],
         ],
 
@@ -70,10 +83,9 @@ $config = [
     'params' => $params,
 
     'modules' => [
-        //'test' => [
-        //'class' => 'app\modules\test\Module',
-        // ... другие настройки модуля ...
-        //],
+        'api' => [
+            'class' => 'app\modules\api\Module'
+        ],
     ],
 ];
 

@@ -24,7 +24,8 @@ class User extends Users implements \yii\web\IdentityInterface
 
     public static function findIdentityByAccessToken($token, $type = null)
     {
-       return false;
+
+        return User::findOne(['username' => $token, 'deleted' => self::STATUS_NOT_DELETED]);
     }
 
     public static function findByUsername($username)

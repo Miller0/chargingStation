@@ -5,19 +5,19 @@ namespace app\models\generated;
 use Yii;
 
 /**
- * This is the model class for table "test".
+ * This is the model class for table "city".
  *
  * @property int $id
- * @property string|null $text
+ * @property string $name
  */
-class Test extends \yii\db\ActiveRecord
+class City extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'test';
+        return 'city';
     }
 
     /**
@@ -26,7 +26,8 @@ class Test extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['text'], 'string', 'max' => 50],
+            [['name'], 'required'],
+            [['name'], 'string', 'max' => 50],
         ];
     }
 
@@ -37,7 +38,7 @@ class Test extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'text' => 'Text',
+            'name' => 'Name',
         ];
     }
 }

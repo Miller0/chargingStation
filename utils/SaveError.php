@@ -11,6 +11,7 @@ class SaveError
     const ERROR_CODES =
         [
             1 => 'unknown error',
+            1000 => 'api error',
         ];
 
 
